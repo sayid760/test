@@ -22,7 +22,7 @@ then
   npm version $VERSION --message "build: release $VERSION"
 
   # publish
-  git push origin master
+  git push origin main
   git push origin refs/tags/v$VERSION
 
   if [[ $VERSION =~ [beta] ]]
@@ -34,6 +34,6 @@ then
 
   # sync dev
   git checkout dev
-  git rebase master
+  git rebase main
   git push origin dev
 fi
