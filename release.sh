@@ -12,8 +12,8 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then
   # build
   # npm run build:lib
-  if [[ `git status --porcelain` ]]; 
-  then
+  # if [[ `git status --porcelain` ]]; 
+  # then
     git add -A
     git commit -am "build: compile $VERSION"
   fi
