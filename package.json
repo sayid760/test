@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build:lib": "node ./index.js",
     "release": "sh release.sh"
   },
   "repository": {

@@ -11,9 +11,9 @@ echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
   # build
-  # npm run build:lib
-  # if [[ `git status --porcelain` ]]; 
-  # then
+  npm run build:lib
+  if [[ `git status --porcelain` ]]; 
+  then
     git add -A
     git commit -am "build: compile $VERSION"
   fi
@@ -22,7 +22,7 @@ then
   npm version $VERSION --message "build: release $VERSION"
 
   # publish
-  git push origin main
+  git push origin master
   git push origin refs/tags/v$VERSION
 
   if [[ $VERSION =~ [beta] ]]
@@ -34,6 +34,6 @@ then
 
   # sync dev
   git checkout dev
-  git rebase main
+  git rebase master
   git push origin dev
 fi
